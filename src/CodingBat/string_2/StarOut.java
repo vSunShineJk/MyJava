@@ -2,17 +2,17 @@ package CodingBat.string_2;
 
 public class StarOut {
     public static void main(String[] args) {
+        StarOut obj = new StarOut();
+        System.out.println(obj.starOut("ab**cd"));
+    }
 
-        String str = "*str*in*gy";
+    public String starOut(String str) {
 
-        StringBuilder sb = new StringBuilder(str);
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '*' && i != 0 && i != str.length()-1){
-                sb.delete(i-1,i+1);
-                i+=3;
-            }
+        String res = "";
+        if (str.contains("*")){
+            res = str.replace(str.substring(str.indexOf('*')-1,str.indexOf('*')+2),"");
         }
 
-        System.out.println(sb);
+        return res;
     }
 }
