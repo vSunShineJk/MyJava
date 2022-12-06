@@ -2,11 +2,19 @@ package CodingBat.string_2;
 
 public class OneTwo {
     public static void main(String[] args) {
-        String str = "tcagdo"; // 0
+        String str = "tcagdo"; // catdog
 
-        String res = str;
-        for (int i = 0, j = 0; i < str.length() && j < str.length(); i++, j++) {
-
+        String res = "";
+        for (int i = 0, j = 0, k = 1; i < str.length(); i++) {
+            if (j < str.length() && k < str.length()) {
+                res += str.charAt(k);
+                k++;
+                res += str.charAt(k);
+                k--;
+                res += str.charAt(j);
+                j += 2;
+            }
         }
+        System.out.println(res);
     }
 }
