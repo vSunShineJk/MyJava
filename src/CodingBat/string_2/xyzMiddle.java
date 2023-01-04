@@ -3,29 +3,14 @@ package CodingBat.string_2;
 public class xyzMiddle {
 
     public static void main(String[] args) {
-        String str = "xyz";
+        String str = "AAxyzBBB";
+        System.out.println("str.length() = " + str.length());
 
-        int numOfXYZ = str.replace("xyz","x").length() - str.replace("xyz","").length();
-        boolean isMiddle = false;
+        System.out.println("str.charAt(str.length()/2) = " + str.charAt(str.length() / 2));
 
-        if (numOfXYZ <= 1) {
-            String part1 = str.substring(0, str.indexOf("xyz"));
-            String part2 = str.substring(str.indexOf("xyz")).replace("xyz", "");
-            isMiddle = Math.abs(part1.length() - part2.length()) <= 1;
-        }
+        boolean isInTheMiddle = false;
+        if (str.length() > 2) isInTheMiddle = str.charAt(str.length() / 2) == 'y' || str.charAt(str.length() / 2) == 'z';
 
-        System.out.println(isMiddle);
-        System.out.println(numOfXYZ);
-        System.out.println();
-
-        //System.out.println(7 < 8 ^ 9 > 10);
+        System.out.println(isInTheMiddle);
     }
-
-//    public static boolean xyzMiddle(String str) {
-//        if(str.length() > 2){
-//            String part1 = str.substring(0,str.indexOf("xyz"));
-//            String part2 = str.replace("xyz","");
-//            return Math.abs(part1.length()-part2.length()) <= 1;
-//        } else return false;
-//    }
 }

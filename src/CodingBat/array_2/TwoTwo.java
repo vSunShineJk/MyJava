@@ -1,24 +1,25 @@
 package CodingBat.array_2;
 
 public class TwoTwo {
-    public static void main(String[] args) {
-        int[] nums = {2, 2, 7, 2, 1};
-        boolean isTwo = false;
-        int count = 0;
 
-        if (nums.length < 2) isTwo = false;
-        else {
-            for (int num : nums) {
-                if (num == 2) {
-                    count++;
-                    if (count == 2) {
-                        count = 0;
-                        isTwo = true;
-                    } else isTwo = false;
+    public boolean twoTwo(int[] nums) {
+        boolean twoTwo = true;
+        if (nums.length != 0){
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == 2){
+                    i++;
+                    if (i < nums.length && nums[i] != 2){
+                        twoTwo = false;
+                        break;
+                    }
                 }
             }
         }
+        return twoTwo;
+    }
 
-        System.out.println(isTwo);
+    public static void main(String[] args) {
+        TwoTwo twoTwo = new TwoTwo();
+        System.out.println(twoTwo.twoTwo(new int[]{2,2,4,2}));
     }
 }

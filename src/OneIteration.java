@@ -12,5 +12,7 @@ public class OneIteration {
         for (int i = 0; i < nums.get(0); i++) {
             System.out.println(nums2.get(i));
         }
+
+
     }
 }
