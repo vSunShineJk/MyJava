@@ -8,10 +8,11 @@ public class TwoTwo {
             for (int i = 0; i < nums.length; i++) {
                 if (nums[i] == 2){
                     i++;
-                    if (i < nums.length && nums[i] != 2){
+                    if (i < nums.length && nums[i] == 2){
                         twoTwo = false;
                         break;
                     }
+                    i--;
                 }
             }
         }
@@ -20,6 +21,6 @@ public class TwoTwo {
 
     public static void main(String[] args) {
         TwoTwo twoTwo = new TwoTwo();
-        System.out.println(twoTwo.twoTwo(new int[]{2,2,4,2}));
+        System.out.println(twoTwo.twoTwo(new int[]{2,2,4,2,2}));
     }
 }
